@@ -12,11 +12,11 @@ public class WarpApp extends Application{
 
     @Override
     void update(double delta) {
-        LOG.debug("update");
+
     }
 
     @Override
     void render(double delta) {
-        LOG.debug("update");
+
     }
 }

@@ -1,1 +1,1 @@
-java -XstartOnFirstThread -jar ${project.build.directory}/${project.build.finalName}.jar
+java -XstartOnFirstThread -jar target/warp.jar
