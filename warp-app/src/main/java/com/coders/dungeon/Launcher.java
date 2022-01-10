@@ -8,8 +8,7 @@ public class Launcher {
 
     public static void main(String... args){
         LOG.info("Start");
-        Application app = Application.getInstance();
-        app.run();
+        ApplicationRunner.run(WarpApp.class);
         LOG.info("End");
     }
 }
