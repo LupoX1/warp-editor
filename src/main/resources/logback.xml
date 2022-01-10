@@ -17,7 +17,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.coders.dungeon" level="debug" additivity="false">
+    <logger name="com.codersdungeon" level="debug" additivity="false">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
     </logger>
