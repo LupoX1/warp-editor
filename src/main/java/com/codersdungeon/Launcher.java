@@ -10,6 +10,7 @@ public class Launcher {
     private static final Logger LOG = LoggerFactory.getLogger(Launcher.class);
 
     public static void main(String... args){
+        // https://youtu.be/025QFeZfeyM?t=4314
         LOG.info("Start");
 
         Application application = new WarpApp();
