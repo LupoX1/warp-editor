@@ -37,10 +37,11 @@ public class LevelEditorScene implements Scene2D {
     private ShaderProgram shaderProgram;
     private Vao vao;
 
-    private Renderer triangleRenderer = TriangleRenderer.create();
+    private Renderer triangleRenderer;
 
     @Override
     public void init() {
+        triangleRenderer = TriangleRenderer.create();
         try {
             VertexShader vertexShader = VertexShader.createShader(vertexSrc);
             FragmentShader fragmentShader = FragmentShader.createShader(fragmentSrc);
@@ -60,7 +61,7 @@ public class LevelEditorScene implements Scene2D {
         VertexArray vertexArray = new VertexArray(vertexData, position, color);
         int[] elementArray = {
                 0, 1, 2,
-                1, 2, 3
+                0, 3, 2
         };
         vao = Vao.create(vertexArray, elementArray);
     }
@@ -72,17 +73,17 @@ public class LevelEditorScene implements Scene2D {
 
     @Override
     public void update(float v) {
-        triangleRenderer.render(v, shaderProgram, vao);
     }
 
     @Override
     public void render(float v) {
-
+        triangleRenderer.render(v, shaderProgram, vao);
     }
 
     @Override
     public void exit() {
         LOG.debug("exit level editor");
         shaderProgram.deleteProgram();
+        vao.delete();
     }
 }

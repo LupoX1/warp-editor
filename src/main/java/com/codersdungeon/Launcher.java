@@ -1,8 +1,6 @@
 package com.codersdungeon;
 
 import com.codersdungeon.warp.engine.Application;
-import com.codersdungeon.warp.engine.scenes.Scene2D;
-import com.codersdungeon.warp.engine.scenes.SceneManager2D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
