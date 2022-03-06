@@ -11,6 +11,11 @@ public class IntroScene implements Scene2D {
     private static final Logger LOG = LoggerFactory.getLogger(IntroScene.class);
 
     @Override
+    public void init() {
+
+    }
+
+    @Override
     public void enter() {
         LOG.info("Enter Intro");
     }

@@ -10,6 +10,6 @@ public class WarpApp extends Application {
 
     public WarpApp(){
         LOG.debug("New WarpApp");
-        SceneManager2D.addScene(new IntroScene());
+        SceneManager2D.addScene(new LevelEditorScene());
     }
 }

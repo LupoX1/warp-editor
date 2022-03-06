@@ -8,6 +8,11 @@ public class MenuScene implements Scene2D {
     private static final Logger LOG = LoggerFactory.getLogger(MenuScene.class);
 
     @Override
+    public void init() {
+
+    }
+
+    @Override
     public void enter() {
         LOG.info("Enter Menu");
     }
