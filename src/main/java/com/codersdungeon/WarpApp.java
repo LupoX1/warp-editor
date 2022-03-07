@@ -1,6 +1,8 @@
 package com.codersdungeon;
 
 import com.codersdungeon.warp.engine.Application;
+import com.codersdungeon.warp.engine.DummyGame;
+import com.codersdungeon.warp.engine.GameLogic;
 import com.codersdungeon.warp.engine.scenes.SceneManager2D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,5 +13,10 @@ public class WarpApp extends Application {
     public WarpApp(){
         LOG.debug("New WarpApp");
         SceneManager2D.addScene(new LevelEditorScene());
+    }
+
+    @Override
+    protected GameLogic createGameLogic() {
+        return new DummyGame();
     }
 }
