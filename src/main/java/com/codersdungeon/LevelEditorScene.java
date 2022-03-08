@@ -51,12 +51,12 @@ public class LevelEditorScene implements Scene2D {
         };
         VertexTemplate position = new VertexTemplate(0, 3, "position");
         VertexTemplate color = new VertexTemplate(1, 4, "color");
-        VertexArray vertexArray = new VertexArray(vertexData, position, color);
+      //  VertexArray vertexArray = new VertexArray(vertexData, position, color);
         int[] elementArray = {
                 0, 1, 2,
                 0, 3, 2
         };
-        vao = Vao.create(vertexArray, elementArray);
+ //       vao = Vao.create(vertexArray, elementArray);
     }
 
 
