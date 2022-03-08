@@ -13,6 +13,11 @@ public class MenuScene implements Scene2D {
     }
 
     @Override
+    public void destroy() {
+
+    }
+
+    @Override
     public void enter() {
         LOG.info("Enter Menu");
     }

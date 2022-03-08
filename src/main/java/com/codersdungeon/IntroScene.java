@@ -16,6 +16,11 @@ public class IntroScene implements Scene2D {
     }
 
     @Override
+    public void destroy() {
+
+    }
+
+    @Override
     public void enter() {
         LOG.info("Enter Intro");
     }

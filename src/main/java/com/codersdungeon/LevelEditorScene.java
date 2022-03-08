@@ -1,5 +1,6 @@
 package com.codersdungeon;
 
+import com.codersdungeon.warp.engine.exceptions.InitializationException;
 import com.codersdungeon.warp.engine.exceptions.ShaderException;
 import com.codersdungeon.warp.engine.graphics.*;
 import com.codersdungeon.warp.engine.graphics.renderer.Renderer;
@@ -40,15 +41,11 @@ public class LevelEditorScene implements Scene2D {
     private Renderer triangleRenderer;
 
     @Override
-    public void init() {
+    public void init() throws InitializationException {
         triangleRenderer = TriangleRenderer.create();
-        try {
-            VertexShader vertexShader = VertexShader.createShader(vertexSrc);
-            FragmentShader fragmentShader = FragmentShader.createShader(fragmentSrc);
-            shaderProgram = ShaderProgram.createProgram(vertexShader, fragmentShader);
-        }catch (ShaderException ex){
-            throw new RuntimeException(ex);
-        }
+        shaderProgram = ShaderProgram.create(vertexSrc, fragmentSrc);
+
+        shaderProgram.init();
 
         float[] vertexData = {
                 -0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
@@ -65,6 +62,7 @@ public class LevelEditorScene implements Scene2D {
         };
         vao = Vao.create(vertexArray, elementArray);
     }
+
 
     @Override
     public void enter() {
@@ -83,7 +81,12 @@ public class LevelEditorScene implements Scene2D {
     @Override
     public void exit() {
         LOG.debug("exit level editor");
-        shaderProgram.deleteProgram();
+        destroy();
+    }
+
+    @Override
+    public void destroy() {
+        shaderProgram.destroy();
         vao.delete();
     }
 }
