@@ -13,7 +13,7 @@ public class MenuScene implements Scene2D {
     }
 
     @Override
-    public void destroy() {
+    public void dispose() {
 
     }
 

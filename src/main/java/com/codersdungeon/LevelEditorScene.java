@@ -1,10 +1,7 @@
 package com.codersdungeon;
 
 import com.codersdungeon.warp.engine.exceptions.InitializationException;
-import com.codersdungeon.warp.engine.exceptions.ShaderException;
 import com.codersdungeon.warp.engine.graphics.*;
-import com.codersdungeon.warp.engine.graphics.renderer.Renderer;
-import com.codersdungeon.warp.engine.graphics.renderer.TriangleRenderer;
 import com.codersdungeon.warp.engine.scenes.Scene2D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +39,6 @@ public class LevelEditorScene implements Scene2D {
 
     @Override
     public void init() throws InitializationException {
-        triangleRenderer = TriangleRenderer.create();
         shaderProgram = ShaderProgram.create(vertexSrc, fragmentSrc);
 
         shaderProgram.init();
@@ -75,18 +71,18 @@ public class LevelEditorScene implements Scene2D {
 
     @Override
     public void render(float v) {
-        triangleRenderer.render(v, shaderProgram, vao);
+        triangleRenderer.render(null, null);
     }
 
     @Override
     public void exit() {
         LOG.debug("exit level editor");
-        destroy();
+        dispose();
     }
 
     @Override
-    public void destroy() {
-        shaderProgram.destroy();
+    public void dispose() {
+        shaderProgram.dispose();
         vao.delete();
     }
 }
