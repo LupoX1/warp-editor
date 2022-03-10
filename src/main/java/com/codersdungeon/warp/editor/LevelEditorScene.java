@@ -1,7 +1,10 @@
 package com.codersdungeon.warp.editor;
 
 import com.codersdungeon.warp.engine.exceptions.InitializationException;
-import com.codersdungeon.warp.engine.graphics.*;
+import com.codersdungeon.warp.engine.graphics.v2.Renderer;
+import com.codersdungeon.warp.engine.graphics.ShaderProgram;
+import com.codersdungeon.warp.engine.graphics.v2.Vao;
+import com.codersdungeon.warp.engine.graphics.v2.VertexTemplate;
 import com.codersdungeon.warp.engine.scenes.Scene2D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,9 +42,6 @@ public class LevelEditorScene implements Scene2D {
 
     @Override
     public void init() throws InitializationException {
-        shaderProgram = ShaderProgram.create(vertexSrc, fragmentSrc);
-
-        shaderProgram.init();
 
         float[] vertexData = {
                 -0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,

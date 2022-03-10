@@ -4,8 +4,8 @@ import com.codersdungeon.warp.engine.GameLogic;
 import com.codersdungeon.warp.engine.util.KeyboardListener;
 import com.codersdungeon.warp.engine.Window;
 import com.codersdungeon.warp.engine.exceptions.InitializationException;
-import com.codersdungeon.warp.engine.graphics.Mesh;
-import com.codersdungeon.warp.engine.graphics.Renderer;
+import com.codersdungeon.warp.engine.graphics.v2.Mesh;
+import com.codersdungeon.warp.engine.graphics.v2.Renderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,8 +26,8 @@ public class DummyGame implements GameLogic {
 
     @Override
     public void init() throws InitializationException {
-        renderer = new Renderer();
         LOG.debug("init");
+        renderer = new Renderer();
         renderer.init();
 
         float[] vertices = new float[]{
