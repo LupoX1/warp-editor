@@ -10,7 +10,7 @@
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>${HOME_LOG}</file>
-        <append>true</append>
+        <append>false</append>
         <immediateFlush>true</immediateFlush>
         <encoder>
             <pattern>%d %p %c{1.} [%t] %m%n</pattern>
@@ -22,8 +22,14 @@
         <appender-ref ref="FILE"/>
     </logger>
 
+    <logger name="com.codersdungeon.warp.engine.graphics" level="warn" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
     <root level="error">
         <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
     </root>
 
 </configuration>
