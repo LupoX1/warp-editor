@@ -3,6 +3,7 @@ package com.codersdungeon.warp.editor;
 import com.codersdungeon.DummyGame;
 import com.codersdungeon.warp.engine.Application;
 import com.codersdungeon.warp.engine.GameLogic;
+import com.codersdungeon.warp.engine.Window;
 import com.codersdungeon.warp.engine.scenes.SceneManager2D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,7 @@ public class WarpApp extends Application {
     }
 
     @Override
-    protected GameLogic createGameLogic() {
-        return new DummyGame();
+    protected GameLogic createGameLogic(Window window) {
+        return new DummyGame(window);
     }
 }

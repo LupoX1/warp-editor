@@ -69,7 +69,7 @@ public class LevelEditorScene implements Scene2D {
 
     @Override
     public void render(float v) {
-        triangleRenderer.render(null, null);
+        triangleRenderer.render( null);
     }
 
     @Override
