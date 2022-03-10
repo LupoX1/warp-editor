@@ -1,13 +1,18 @@
 package com.codersdungeon;
 
 import com.codersdungeon.warp.engine.GameLogic;
+import com.codersdungeon.warp.engine.graphics.Graphics;
+import com.codersdungeon.warp.engine.graphics.VertexTemplate;
 import com.codersdungeon.warp.engine.util.KeyboardListener;
 import com.codersdungeon.warp.engine.Window;
 import com.codersdungeon.warp.engine.exceptions.InitializationException;
-import com.codersdungeon.warp.engine.graphics.v2.Mesh;
-import com.codersdungeon.warp.engine.graphics.v2.Renderer;
+import com.codersdungeon.warp.engine.graphics.Mesh;
+import com.codersdungeon.warp.engine.graphics.Renderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_DOWN;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_UP;
@@ -39,8 +44,12 @@ public class DummyGame implements GameLogic {
         int[] indices = new int[]{
                 0, 1, 3, 3, 1, 2
         };
-        mesh = new Mesh(vertices, indices);
-        mesh.init();
+
+        List<VertexTemplate> templateList = new ArrayList<>();
+        templateList.add(new VertexTemplate(0, 3, "positions"));
+        templateList.add(new VertexTemplate(1, 4, "colors"));
+
+        mesh = Graphics.createMesh(vertices, indices, templateList);
     }
 
     @Override
