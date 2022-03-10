@@ -1,4 +1,4 @@
-package com.codersdungeon;
+package com.codersdungeon.warp.editor;
 
 import com.codersdungeon.warp.engine.exceptions.InitializationException;
 import com.codersdungeon.warp.engine.graphics.*;

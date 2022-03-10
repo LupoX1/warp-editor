@@ -1,7 +1,7 @@
-package com.codersdungeon;
+package com.codersdungeon.warp.editor;
 
+import com.codersdungeon.DummyGame;
 import com.codersdungeon.warp.engine.Application;
-import com.codersdungeon.warp.engine.DummyGame;
 import com.codersdungeon.warp.engine.GameLogic;
 import com.codersdungeon.warp.engine.scenes.SceneManager2D;
 import org.slf4j.Logger;

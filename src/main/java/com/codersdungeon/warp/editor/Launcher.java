@@ -1,5 +1,6 @@
-package com.codersdungeon;
+package com.codersdungeon.warp.editor;
 
+import com.codersdungeon.DummyApplication;
 import com.codersdungeon.warp.engine.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,7 @@ public class Launcher {
         // https://youtu.be/025QFeZfeyM?t=4314
         LOG.info("Start");
 
-        Application application = new DummyApplication();
+        Application application = new WarpApp();
         application.run();
 
         LOG.info("End");
